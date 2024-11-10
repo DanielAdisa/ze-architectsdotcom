@@ -50,8 +50,8 @@ const Navbar = () => {
                     }
     },[])
   return (
-    <div className={header ? 'z-50 fixed text-black  w-screen h-fit bg-stone-50 transition-all ease-in-out' : 'z-50 fixed transition-all text-stone-50 w-screen h-fit backdrop-blur-md opacity-100 ease-in-out'}>
-        <div className=" max-w-7xl mx-auto flex  items-center justify-between ">
+    <div className={header ? 'z-50 fixed text-black  w-screen md:h-fit  bg-stone-50 transition-all ease-in-out' : 'z-50 fixed transition-all text-stone-50 w-screen md:h-fit bg-black/80 backdrop-blur-md opacity-100 ease-in-out'}>
+        <div className=" max-w-7xl md:h-[70px] h-[80px] mx-auto flex  items-center justify-between ">
             <div className=" pt-2 pl-0 w-[40%] flex justify-start p-4">
                 {/* <Image src={logo} height={100} width={150} alt="logo"/> */}
                     <Link className="p-4 hover:text-black/80" href={"/"}>
@@ -75,12 +75,12 @@ const Navbar = () => {
             </div>
         </div>
         {isMobileMenuOpen && (
-            <div className="w-full space-y-10 p-4 pt-0 text-center backdrop-blur-lg lg:hidden h-fit ">
-                <Link className={header ? ' p-4 hover:text-black/60 w-full ' : 'p-4 hover:text-white/60 ' } href={"/about"}><span className="">About</span></Link><br/>
-                <Link className={header ? ' p-4 hover:text-black/60 w-full ' : 'p-4 hover:text-white/60 ' } href={"/"}><span className="">Team</span></Link><br/>
-                <Link className={header ? ' p-4 hover:text-black/60 w-full ' : 'p-4 hover:text-white/60 ' } href={"/projects"}><span className="">Projects</span></Link><br/>
-                <Link className={header ? ' p-4 hover:text-black/60 w-full ' : 'p-4 hover:text-white/60 ' } href={"/"}><span className="">Insights</span></Link><br/>
-                <Link className={header ? ' p-4 hover:text-black/60 w-full ' : 'p-4 hover:text-white/60 ' } href={"/"}><span className="">Contact</span></Link><br/>
+            <div className="w-full space-y-5 mt-0 pt-0  p-5 text-center backdrop-blur-2xl lg:hidden h-fit ">
+                <Link className={header ? '  hover:text-black/60 w-full ' : ' hover:text-white/60 ' } href={"/about"}><span className="">About</span></Link><br/>
+                <Link className={header ? '  hover:text-black/60 w-full ' : ' hover:text-white/60 ' } href={"/"}><span className="">Team</span></Link><br/>
+                <Link className={header ? '  hover:text-black/60 w-full ' : ' hover:text-white/60 ' } href={"/projects"}><span className="">Projects</span></Link><br/>
+                <Link className={header ? '  hover:text-black/60 w-full ' : ' hover:text-white/60 ' } href={"/"}><span className="">Insights</span></Link><br/>
+                <Link className={header ? '  hover:text-black/60 w-full ' : ' hover:text-white/60 ' } href={"/"}><span className="">Contact</span></Link><br/>
             </div>
         )}
     </div>

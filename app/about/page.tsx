@@ -17,7 +17,7 @@ import image2 from "@/public/Assets/1234.png"
 
 const Page = () => {
   return (
-    <Carousel className=" w-4/6 mx-auto">
+    <Carousel className="pt-[136px] w-4/6 mx-auto">
     <CarouselContent className=" mx-auto w-[90%]">
       {/* {Array.from({ length: 5 }).map((_, index) => ( */}
         <CarouselItem>
