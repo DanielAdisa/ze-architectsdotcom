@@ -147,7 +147,7 @@ const CustomHeader = () => {
           <DockIcon>
             <Tooltip>
               <TooltipTrigger asChild>
-                <ModeToggle className="rounded-full" />
+                {/* <ModeToggle className="rounded-full" /> */}
               </TooltipTrigger>
               <TooltipContent>
                 <p>Theme</p>
