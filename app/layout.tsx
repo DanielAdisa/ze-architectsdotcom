@@ -1,10 +1,10 @@
+// app/layout.tsx
+
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-
-
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,13 +18,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`relative flex min-h-screen mx-auto antialiased`}
-        >
-        <Navbar/>
-        {children}
+      <body className="flex flex-col min-h-screen">
+        {/* Navbar at the top */}
+        <Navbar />
+
+        {/* Main content area, takes up remaining space */}
+        <main className="flex-grow">
+          {children}
+        </main>
+
+        {/* Footer stays at the bottom */}
+        <Footer />
       </body>
-        <Footer/>
     </html>
   );
 }
