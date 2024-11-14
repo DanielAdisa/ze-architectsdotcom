@@ -1,28 +1,42 @@
-import Link from "next/link"
-import Hero from "./Hero"
+// Footer.tsx
+
+import Link from "next/link";
 
 const Footer = () => {
   return (
-    <section id="footer" className=" absolut bottom-0 mt-20 text-stone-50 w-full pb- pt-[40px] p-16 h-fit rounded-t-xl bg-black">
-        <div className="md:flex w-full items-cente justify-between">
-
-        <div className="md:flex-col md:space-y-4 space-y-10 text-start md:w-1/3">
-          <div className="">1 Rosse Court Heights, Balgaddy,<br/> Lucan, Co. Dublin</div>
-          <div className="">Mobile: +353 86 1750772</div>
-          <div className="">Email: zubi@ze-architects.com</div>
+    <footer className="text-stone-50 w-full p-8 md:p-16 bg-blue-900 rounded-t-xl">
+      <div className="md:flex w-full items-center justify-between">
+        
+        {/* Address Section */}
+        <div className="space-y-4 text-start md:w-1/3">
+          <div>1 Rosse Court Heights, Balgaddy,<br /> Lucan, Co. Dublin</div>
+          <div>Mobile: +353 86 1750772</div>
+          <div>Email: <Link href="mailto:zubi@ze-architects.com" className="underline hover:text-blue-300">zubi@ze-architects.com</Link></div>
         </div>
 
-        <div className="text-cent md:w-1/3">
-          Socials
+        {/* Socials Section */}
+        <div className="text-center md:w-1/3 mt-10 md:mt-0">
+          <h3 className="font-semibold text-lg">Socials</h3>
+          <ul className="space-y-1 mt-2">
+            <li><Link href="#" className="hover:text-blue-300">LinkedIn</Link></li>
+            <li><Link href="#" className="hover:text-blue-300">Twitter</Link></li>
+            <li><Link href="#" className="hover:text-blue-300">Instagram</Link></li>
+          </ul>
         </div>
 
-        <div className="md:w-1/3 mt-5 text-right">
-          <Link href={"/"}>Back To top</Link>
+        {/* Back to Top Section */}
+        <div className="md:w-1/3 mt-10 md:mt-0 text-right">
+          <Link href="#top">
+            <Link href={"#top"} className="text-blue-200 font-semibold hover:text-blue-300">Back to Top</Link>
+          </Link>
         </div>
-        </div>
+      </div>
 
-        <div className=""></div>
-    </section>
-  )
-}
-export default Footer
+      <div className="border-t border-blue-800 mt-8 pt-4 text-center text-sm text-blue-200">
+        &copy; {new Date().getFullYear()} ZE Architects. All rights reserved.
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

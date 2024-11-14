@@ -19,12 +19,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`relative mx-auto antialiased`}
+        className={`relative flex min-h-screen mx-auto antialiased`}
         >
         <Navbar/>
         {children}
-        <Footer/>
       </body>
+        <Footer/>
     </html>
   );
 }

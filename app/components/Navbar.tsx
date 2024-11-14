@@ -50,7 +50,7 @@ const Navbar = () => {
                     }
     },[])
   return (
-    <div className={header ? 'z-50 fixed text-black  w-screen md:h-fit  shadow-xl transition-all ease-in-out' : 'z-50 fixed transition-all text-stone-50 w-screen md:h-fit  backdrop-blur-x opacity-100 ease-in-out'}>
+    <div className={header ? 'z-50 fixed text-black  w-screen md:h-fit  bg-white shadow-xl transition-all ease-in-out' : 'z-50 fixed transition-all text-stone-50 w-screen md:h-fit  backdrop-blur-x opacity-100 ease-in-out'}>
         <div className=" max-w-[95%] md:h-[70px] h-[80px] mx-auto flex  items-center justify-between ">
             <div className=" pt-2 pl-0 w-[40%] flex justify-start p-4">
                 {/* <Image src={logo} height={100} width={150} alt="logo"/> */}
