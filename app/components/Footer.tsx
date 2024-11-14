@@ -17,10 +17,10 @@ const Footer = () => {
         {/* Socials Section */}
         <div className="text-center md:w-1/3 mt-10 md:mt-0">
           <h3 className="font-semibold text-lg">Socials</h3>
-          <ul className="space-y-1 mt-2">
-            <li><Link href="#" className="hover:text-blue-300">LinkedIn</Link></li>
-            <li><Link href="#" className="hover:text-blue-300">Twitter</Link></li>
-            <li><Link href="#" className="hover:text-blue-300">Instagram</Link></li>
+          <ul className="flex items-center justify-center gap-5 mt-10">
+            <li><Link href="#" className="hover:text-blue-300 bg-white/20 hover:bg-white/10 p-3 rounded-[20px]">LinkedIn</Link></li>
+            <li><Link href="#" className="hover:text-blue-300 bg-white/20 hover:bg-white/10 p-3 rounded-[20px]">Twitter</Link></li>
+            <li><Link href="#" className="hover:text-blue-300 bg-white/20 hover:bg-white/10 p-3 rounded-[20px]">Instagram</Link></li>
           </ul>
         </div>
 
