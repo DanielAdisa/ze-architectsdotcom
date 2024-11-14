@@ -1,13 +1,15 @@
 // /app/projects/[id]/page.tsx
+"use client"
 import { notFound } from 'next/navigation';
 import { projects } from '@/data/data';
 import Image from 'next/image';
 
 const ProjectPage = ({ params }: { params: { id: string } }) => {
+  // Directly access `params.id` since it's provided by Next.js in the App Router
   const project = projects.find((p) => p.id === params.id);
 
   if (!project) {
-    notFound(); // This will trigger a 404 page if the project is not found
+    notFound(); // Trigger a 404 page if the project is not found
   }
 
   return (

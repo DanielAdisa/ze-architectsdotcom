@@ -1,4 +1,5 @@
 // /app/page.tsx
+"use client"
 import Link from 'next/link';
 import { FC } from 'react';
 import { projects } from '@/data/data';
