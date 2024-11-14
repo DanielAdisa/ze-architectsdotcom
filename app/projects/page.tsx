@@ -38,7 +38,7 @@ const Home: FC = () => {
               <div
                 className={`flex flex-col md:flex-row ${
                   index % 2 === 1 ? 'md:flex-row-reverse' : ''
-                } items-center md:space-x- space-y-4 md:space-y-4`}
+                } items-center md:space-x- space-y-4 md:space-y-5`}
               >
                 {/* Image */}
                 <div className="w-full md:w-2/3 mb-4 md:mb-5">
@@ -47,7 +47,7 @@ const Home: FC = () => {
                     alt={`Project ${project.id}`}
                     width={800}  // Higher resolution for better quality
                     height={500}
-                    className="w-full p-4 h-64 md:h-96 object-cover rounded-lg transition-transform duration-300"
+                    className="w-full p- h-64 md:h-96 object-cover rounded-lg transition-transform duration-300"
                   />
                 </div>
                 
