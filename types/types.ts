@@ -1,7 +1,7 @@
 // types.ts
 export interface Project {
     id: string;
-    image: string;
+    image: any;
     text: string;
   }
   
