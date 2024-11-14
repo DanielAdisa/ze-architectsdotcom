@@ -3,10 +3,15 @@
 import { notFound } from 'next/navigation';
 import { projects } from '@/data/data';
 import Image from 'next/image';
+import { use } from 'react';
 
-const ProjectPage = ({ params }: { params: { id: any } }) => {
-  // Directly access `params.id` since it's provided by Next.js in the App Router
-  const project = projects.find((p) => p.id === params.id);
+// Type definition for params as a Promise
+const ProjectPage = ({ params }: { params: Promise<{ id: string }> }) => {
+  // Unwrap params using React's use hook (this is required for async params)
+  const unwrappedParams = use(params);
+
+  // Find the project based on the unwrapped id
+  const project = projects.find((p) => p.id === unwrappedParams.id);
 
   if (!project) {
     notFound(); // Trigger a 404 page if the project is not found
