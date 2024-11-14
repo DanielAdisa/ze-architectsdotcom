@@ -22,7 +22,6 @@ const Home: FC = () => {
                   className="w-full h-64 object-cover rounded-lg "
                 />
                 <div className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-40 text-white text-lg font-semibold opacity-0 hover:opacity-100 transition-opacity">
-                  {project.text}
                 </div>
               </div>
           </Link>
