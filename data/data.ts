@@ -8,10 +8,35 @@ import fifth from "@/public/Assets/cagliari_02_viz.jpg";
 import sixth from "@/public/Assets/hero.avif";
 
 export const projects: Project[] = [
-  { id: '1', image: first, text: 'Project 1 Description' },
-  { id: '2', image: second, text: 'Project 2 Description' },
-  { id: '3', image: third, text: 'Project 3 Description' },
-  { id: '4', image: forth, text: 'Project 4 Description' },
-  { id: '5', image: fifth, text: 'Project 5 Description' },
-  { id: '6', image: sixth, text: 'Project 6 Description' },
+  { 
+    id: '1', 
+    image: first, 
+    text: 'Project 1 Description' 
+  },
+  { 
+    id: '2',
+    image: second,
+    text: 'Project 2 Description'
+   },
+
+  { 
+    id: '3',
+    image: third,
+    text: 'Project 3 Description' 
+  },
+  { 
+    id: '4', 
+    image: forth, 
+    text: 'Project 4 Description' 
+  },
+  { 
+    id: '5', 
+    image: fifth, 
+    text: 'Project 5 Description'
+   },
+  { 
+    id: '6', 
+    image: sixth, 
+    text: 'Project 6 Description'
+   },
 ];

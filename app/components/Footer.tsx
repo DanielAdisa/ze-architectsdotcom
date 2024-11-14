@@ -3,7 +3,7 @@ import Hero from "./Hero"
 
 const Footer = () => {
   return (
-    <section id="footer" className=" absolut bottom- mt-20 text-stone-50 w-full pb- pt-[40px] p-16 h-fit rounded-t-xl bg-black">
+    <section id="footer" className=" absolut bottom-0 mt-20 text-stone-50 w-full pb- pt-[40px] p-16 h-fit rounded-t-xl bg-black">
         <div className="md:flex w-full items-cente justify-between">
 
         <div className="md:flex-col md:space-y-4 space-y-10 text-start md:w-1/3">

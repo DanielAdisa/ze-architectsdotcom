@@ -18,7 +18,8 @@ const ProjectPage = ({ params }: { params: Promise<{ id: string }> }) => {
   }
 
   return (
-    <div className="relative h-screen w-full">
+    <div className="h-fit w-full">
+      <div className="relative w-full h-full">
       <Image
         src={project.image}
         alt={`Project ${project.id}`}
@@ -29,6 +30,10 @@ const ProjectPage = ({ params }: { params: Promise<{ id: string }> }) => {
       <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50" />
       <div className="absolute bottom-10 left-10 text-white text-3xl font-bold">
         {project.text}
+      </div>
+      </div>
+      <div className=" h-screen">
+
       </div>
     </div>
   );
