@@ -37,7 +37,7 @@ const Home: FC = () => {
             <Link key={project.id} href={`/projects/${project.id}`} className="group">
               <div
                 className={`flex flex-col md:flex-row ${
-                  index % 2 === 1 ? 'md:flex-row-reverse' : ''
+                  index % 2 === 1 ? 'md:flex-row-reverse ga' : ''
                 } items-center md:space-x- space-y-4 md:space-y-5`}
               >
                 {/* Image */}

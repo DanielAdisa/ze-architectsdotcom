@@ -10,7 +10,7 @@ import sixth from "@/public/Assets/hero.avif";
 export const projects: Project[] = [
   { 
     id: '1', 
-    title: 'Urban Living', 
+    title: 'Leisure', 
     image: first, 
     description: 'A visionary project that redefines urban lifestyle with a mix of nature and modern architecture.',
     category: 'Architecture',
@@ -18,7 +18,7 @@ export const projects: Project[] = [
   },
   { 
     id: '2', 
-    title: 'Coastal Retreat', 
+    title: 'Education', 
     image: second, 
     description: 'An exquisite retreat by the sea, designed to maximize tranquility and natural beauty.', 
     category: 'Vacation Homes',
@@ -26,7 +26,7 @@ export const projects: Project[] = [
   },
   { 
     id: '3', 
-    title: 'Mountain Getaway', 
+    title: 'Healthcare', 
     image: third, 
     description: 'A cozy mountain cabin with sustainable building practices and breathtaking views.', 
     category: 'Cabins',
@@ -34,23 +34,23 @@ export const projects: Project[] = [
   },
   { 
     id: '4', 
-    title: 'Modern Office Space', 
-    image: fourth, 
-    description: 'A cutting-edge workspace designed for productivity and collaboration in the modern era.', 
-    category: 'Office',
-    date: '2023-09-10'
-  },
-  { 
-    id: '5', 
-    title: 'Suburban Home', 
+    title: 'Residential', 
     image: fifth, 
     description: 'A family home with spacious interiors and energy-efficient features.', 
     category: 'Residential',
     date: '2023-01-18'
   },
   { 
+    id: '5', 
+    title: 'Commercial', 
+    image: sixth, 
+    description: 'A luxury villa focused on sustainability, featuring solar energy and a green roof.', 
+    category: 'Eco-Friendly',
+    date: '2023-11-08'
+  },
+  { 
     id: '6', 
-    title: 'Eco-Friendly Villa', 
+    title: 'Religion', 
     image: sixth, 
     description: 'A luxury villa focused on sustainability, featuring solar energy and a green roof.', 
     category: 'Eco-Friendly',
