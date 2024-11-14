@@ -18,7 +18,7 @@ import image3 from "@/public/Assets/1234.png"
 
 const Latest = () => {
   return (
-    <section className="w-9/12 mt-20 mx-auto">
+    <section className="md:w-9/12 w-3/3 mt-20 mx-auto">
         <div className="  text-center">
             <h3 className=" text-stone-800 font-semibold text-[30px]">Latest</h3>
         </div>
