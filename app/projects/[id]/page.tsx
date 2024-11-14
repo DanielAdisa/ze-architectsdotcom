@@ -1,15 +1,9 @@
 // /app/projects/[id]/page.tsx
-import { FC } from 'react';
 import { notFound } from 'next/navigation';
 import { projects } from '@/data/data';
-import { Project } from '@/types/types';
 import Image from 'next/image';
 
-interface ProjectPageProps {
-  params: { id: string };
-}
-
-const ProjectPage: FC<ProjectPageProps> = ({ params }) => {
+const ProjectPage = ({ params }: { params: { id: string } }) => {
   const project = projects.find((p) => p.id === params.id);
 
   if (!project) {
