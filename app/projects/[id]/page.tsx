@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { projects } from '@/data/data';
 import Image from 'next/image';
 
-const ProjectPage = ({ params }: { params: { id: string } }) => {
+const ProjectPage = ({ params }: { params: { id: any } }) => {
   // Directly access `params.id` since it's provided by Next.js in the App Router
   const project = projects.find((p) => p.id === params.id);
 
