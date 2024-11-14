@@ -38,7 +38,7 @@ const Home: FC = () => {
               <div
                 className={`flex flex-col md:flex-row ${
                   index % 2 === 1 ? 'md:flex-row-reverse' : ''
-                } items-center md:space-x-8 space-y-4 md:space-y-0`}
+                } items-center md:space-x- space-y-4 md:space-y-4`}
               >
                 {/* Image */}
                 <div className="w-full md:w-2/3 mb-4 md:mb-5">
@@ -52,10 +52,10 @@ const Home: FC = () => {
                 </div>
                 
                 {/* Text */}
-                <div className="w-full relative md:w-1/3 flex flex-col h-[15vh]  md:text-left p-10 md:p-0">
-                  <h2 className="text-3xl absolute top-0 font-bold text-gray-800 hover:text-primary transition duration-300">{project.title}</h2>
+                <div className="w-full relati md:w-1/3 flex flex-col items-center justify-betwee h-fit gap-5 p-10 md:p-5">
+                  <h2 className="text-3xl place-content-start font-bold text-gray-800 hover:text-primary transition duration-300">{project.title}</h2>
                   <p className="text-sm text-gray-500">{project.date}</p>
-                  <p className="text-lg text-gray-700 mt-2 leading-relaxed tracking-wide">
+                  <p className="text-lg text-gray-700 leading-relaxed tracking-wide">
                     {project.description}
                   </p>
                   <Button className="mt-4  bg-primary w-full text-white rounded-md hover:bg-primary-dark transition">

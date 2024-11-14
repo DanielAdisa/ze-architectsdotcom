@@ -66,12 +66,12 @@ const Navbar = () => {
                     {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
                 </button>
             </div>
-            <div className="w-[50%] p-5 text-[18px] font-medium hidden   md:flex justify-between">
-                <Link className={header ? ' p-4 hover:text-black/60 ' : 'p-4 hover:text-white/60 ' } href={"/about"}><span className="">About</span></Link>
-                <Link className={header ? ' p-4 hover:text-black/60 ' : 'p-4 hover:text-white/60 ' } href={"/"}><span className="">Team</span></Link>
-                <Link className={header ? ' p-4 hover:text-black/60 ' : 'p-4 hover:text-white/60 ' } href={"/projects"}><span className="">Projects</span></Link>
-                <Link className={header ? ' p-4 hover:text-black/60 ' : 'p-4 hover:text-white/60 ' } href={"/"}><span className="">Insights</span></Link>
-                <Link className={header ? ' p-4 hover:text-black/60 ' : 'p-4 hover:text-white/60 ' } href={"/"}><span className="">Contact</span></Link>
+            <div className="w-[50%] text-[18px] font-medium hidden   md:flex justify-between">
+                <Link className={header ? ' p-4 hover:text-black/60 ' : 'p-4 hover:text-white/60 bg-black/70 rounded-md ' } href={"/about"}><span className="">About</span></Link>
+                <Link className={header ? ' p-4 hover:text-black/60 ' : 'p-4 hover:text-white/60 bg-black/70 rounded-md ' } href={"/"}><span className="">Team</span></Link>
+                <Link className={header ? ' p-4 hover:text-black/60 ' : 'p-4 hover:text-white/60 bg-black/70 rounded-md ' } href={"/projects"}><span className="">Projects</span></Link>
+                <Link className={header ? ' p-4 hover:text-black/60 ' : 'p-4 hover:text-white/60 bg-black/70 rounded-md ' } href={"/"}><span className="">Insights</span></Link>
+                <Link className={header ? ' p-4 hover:text-black/60 ' : 'p-4 hover:text-white/60 bg-black/70 rounded-md ' } href={"/"}><span className="">Contact</span></Link>
             </div>
         </div>
         {isMobileMenuOpen && (

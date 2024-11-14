@@ -1,6 +1,6 @@
 const page = () => {
   return (
-    <div>page</div>
+    <div className="pt-[100px] h-screen w-4/6 mx-auto">page</div>
   )
 }
 export default page

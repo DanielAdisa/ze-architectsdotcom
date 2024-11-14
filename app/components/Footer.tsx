@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="text-stone-50 w-full p-8 md:p-16 bg-blue-900 rounded-t-xl">
+    <footer className="text-stone-50 w-full p-8 md:p-8 bg-blue-900 rounded-t-x">
       <div className="md:flex w-full items-center justify-between">
         
         {/* Address Section */}

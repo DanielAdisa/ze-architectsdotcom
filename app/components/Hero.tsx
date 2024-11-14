@@ -26,7 +26,7 @@ const defaultSlides = [
 
 
 
-const Hero = ({ slides = defaultSlides, interval = 5000 }) => {
+const Hero = ({ slides = defaultSlides, interval = 7000 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
