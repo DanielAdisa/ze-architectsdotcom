@@ -10,7 +10,7 @@ const ProjectPage = ({ params }: { params: Promise<{ id: string }> }) => {
   const unwrappedParams = use(params);
 
   // Find the project based on the unwrapped id
-  const project = projects.find((p) => p.id === unwrappedParams.id);
+  const project = projects.find((p) => p.hash === unwrappedParams.id);
 
   if (!project) {
     notFound(); // Trigger a 404 page if the project is not found

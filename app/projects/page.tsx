@@ -34,7 +34,7 @@ const Home: FC = () => {
         {/* Project list with alternating layout */}
         <div className="space-y-12">
           {projects.map((project: Project, index) => (
-            <Link key={project.id} href={`/projects/${project.id}`} className="group">
+            <Link key={project.id} href={`/projects/${project.hash}`} className="group">
               <div
                 className={`flex flex-col md:flex-row ${
                   index % 2 === 1 ? 'md:flex-row-reverse ga' : ''
@@ -52,7 +52,7 @@ const Home: FC = () => {
                 </div>
                 
                 {/* Text */}
-                <div className="w-full relati md:w-1/3 flex flex-col items-center justify-betwee h-fit gap-5 p-10 md:p-5">
+                <div className="w-full relati md:w-1/3 flex flex-col items-center justify-betwee h-fit gap-5 p-4 pr-0 pl-0 md:p-5">
                   <h2 className="text-3xl place-content-start font-bold text-gray-800 hover:text-primary transition duration-300">{project.title}</h2>
                   <p className="text-sm text-gray-500">{project.date}</p>
                   <p className="text-lg text-gray-700 leading-relaxed tracking-wide">

@@ -9,7 +9,8 @@ import sixth from "@/public/Assets/hero.avif";
 
 export const projects: Project[] = [
   { 
-    id: '1', 
+    id: '1',
+    hash: 'asedeybe', 
     title: 'Leisure', 
     image: first, 
     description: 'A visionary project that redefines urban lifestyle with a mix of nature and modern architecture.',
@@ -17,7 +18,8 @@ export const projects: Project[] = [
     date: '2023-07-01'
   },
   { 
-    id: '2', 
+    id: '2',
+    hash: 'asedeyb', 
     title: 'Education', 
     image: second, 
     description: 'An exquisite retreat by the sea, designed to maximize tranquility and natural beauty.', 
@@ -25,7 +27,8 @@ export const projects: Project[] = [
     date: '2023-05-15'
   },
   { 
-    id: '3', 
+    id: '3',
+    hash: 'asedey', 
     title: 'Healthcare', 
     image: third, 
     description: 'A cozy mountain cabin with sustainable building practices and breathtaking views.', 
@@ -33,7 +36,8 @@ export const projects: Project[] = [
     date: '2023-03-22'
   },
   { 
-    id: '4', 
+    id: '4',
+    hash: 'asede',
     title: 'Residential', 
     image: fifth, 
     description: 'A family home with spacious interiors and energy-efficient features.', 
@@ -41,7 +45,8 @@ export const projects: Project[] = [
     date: '2023-01-18'
   },
   { 
-    id: '5', 
+    id: '5',
+    hash: 'ased', 
     title: 'Commercial', 
     image: sixth, 
     description: 'A luxury villa focused on sustainability, featuring solar energy and a green roof.', 
@@ -49,7 +54,8 @@ export const projects: Project[] = [
     date: '2023-11-08'
   },
   { 
-    id: '6', 
+    id: '6',
+    hash: 'ase', 
     title: 'Religion', 
     image: sixth, 
     description: 'A luxury villa focused on sustainability, featuring solar energy and a green roof.', 
