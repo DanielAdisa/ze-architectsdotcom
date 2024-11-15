@@ -1,6 +1,7 @@
 // Footer.tsx
 
 import Link from "next/link";
+import { FaLinkedinIn, FaSquareInstagram, FaTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -17,10 +18,10 @@ const Footer = () => {
         {/* Socials Section */}
         <div className="text-center md:w-1/3 mt-10 md:mt-0">
           <h3 className="font-semibold text-lg">Socials</h3>
-          <ul className="flex items-center justify-center gap-5 mt-10">
-            <li><Link href="#" className="hover:text-blue-300 bg-white/20 hover:bg-white/10 p-3 rounded-[20px]">LinkedIn</Link></li>
-            <li><Link href="#" className="hover:text-blue-300 bg-white/20 hover:bg-white/10 p-3 rounded-[20px]">Twitter</Link></li>
-            <li><Link href="#" className="hover:text-blue-300 bg-white/20 hover:bg-white/10 p-3 rounded-[20px]">Instagram</Link></li>
+          <ul className="flex h-fit w-full items-center justify-center gap-5 mt-10">
+            <li><Link href="#" className="hover:text-blue-300 hover:bg-white/10"><FaLinkedinIn className=" md:text-3xl text-xl"/></Link></li>
+            <li><Link href="#" className="hover:text-blue-300 hover:bg-white/10"><FaTwitter className=" md:text-3xl text-xl"/></Link></li>
+            <li><Link href="#" className="hover:text-blue-300 hover:bg-white/10"><FaSquareInstagram className=" md:text-3xl text-xl"/></Link></li>
           </ul>
         </div>
 

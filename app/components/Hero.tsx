@@ -54,7 +54,7 @@ const Hero = ({ slides = defaultSlides, interval = 7000 }) => {
             className="w-full h-full object-cover"
           />
            <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent " />
-          <div className="absolute bottom-10 left-20 text-white text-3xl font-normal">
+          <div className="absolute bottom-9 text-xl md:left-20 left-8 text-white md:text-3xl md:font-normal font-semibold">
             {slide.text}
           </div>
         </div>

@@ -57,13 +57,13 @@ const Navbar = () => {
                 </button>
 
                 {/* Desktop Menu */}
-                <div className="hidden lg:flex space-x-6 text-lg font-medium">
-                    {["About", "Team", "Projects", "Insights", "Contact"].map((item) => (
+                <div className="hidden lg:flex space-x-10 text-lg font-medium">
+                    {["About", "Team", "Projects","ArchViz", "Insights", "Contact"].map((item) => (
                         <Link
                             key={item}
                             href={`/${item.toLowerCase()}`}
                             className={`${
-                                header ? "hover:text-gray-700" : "hover:text-gray-300"
+                                header ? "hover:text-gray-700 bg-stone-500/60 p-2 pl-4 pr-4 rounded-full hover:bg-stone-500/50" : "hover:text-gray-300 p-2 pl-4 pr-4 hover:bg-black/10 bg-black/15 rounded-full"
                             } transition duration-300`}
                         >
                             {item}
@@ -82,7 +82,7 @@ const Navbar = () => {
                     >
                         <FaTimes />
                     </button>
-                    {["About", "Team", "Projects", "Insights", "Contact"].map((item) => (
+                    {["/","About", "Team", "Projects","ArchViz", "Insights", "Contact"].map((item) => (
                         <Link
                             key={item}
                             href={`/${item.toLowerCase()}`}

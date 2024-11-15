@@ -4,7 +4,7 @@ import Image from 'next/image'
 const page = () => {
   return (
     <div className="">
-      <div className="relative w-full h-[400px]">
+      <div className="relative w-full h-[597.083px]">
         <Image
           src={zubi} // Replace with your hero image path
           alt="Hero Image"
