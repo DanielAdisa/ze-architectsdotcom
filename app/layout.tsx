@@ -19,6 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <link href="/zealogo.png" type="image" />
+      </Head>
       <body className="flex flex-col min-h-screen">
         {/* Navbar at the top */}
         <Navbar />

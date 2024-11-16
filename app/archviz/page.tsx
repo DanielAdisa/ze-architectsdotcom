@@ -5,6 +5,7 @@ import Image from 'next/image';
 import zubi from '@/public/Assets/hero1.jpeg';
 import { PROJECTS } from '@/data/data';
 import { Button } from '@/components/ui/button';
+import { ArrowLeftIcon, ArrowRightIcon } from 'lucide-react';
 
 const Page = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -71,7 +72,7 @@ const Page = () => {
           <div className="relative max-w-5xl w-full p-4">
             {/* Close Button */}
             <Button
-              className="absolute md:-top-10 md:-right-14 text-white text-2xl font-bold"
+              className="absolute bg-stone-500/70 md:-top-10 top-0 right-2 md:-right-14 text-white text-2xl font-mono"
               onClick={closeModal}
             >
               &times;
@@ -90,21 +91,21 @@ const Page = () => {
 
             {/* Navigation Controls */}
             <div className="flex justify-between items-center mt-4">
-              <button
-                className="bg-white px-4 py-2 rounded-md shadow-md"
+              <Button
+                className="bg-whit px-4 bg-stone-500/70 py-2 rounded-md shadow-md"
                 onClick={showPrevious}
               >
-                Previous
-              </button>
+                <ArrowLeftIcon/>
+              </Button>
               <h2 className="text-white text-lg font-bold">
                 {PROJECTS[currentIndex].title}
               </h2>
-              <button
-                className="bg-white px-4 py-2 rounded-md shadow-md"
+              <Button
+                className="bg-whit px-4 py-2 bg-stone-500/70 rounded-md shadow-md"
                 onClick={showNext}
               >
-                Next
-              </button>
+                <ArrowRightIcon/>
+              </Button>
             </div>
           </div>
         </div>
