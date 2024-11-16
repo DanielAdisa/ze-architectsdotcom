@@ -80,7 +80,7 @@ const Page = () => {
 
         {/* Map Section */}
         <div className="flex-1 mt-10 md:mt-0">
-          <div className="w-3/3 mx-auto h-[450px] border rounded-lg overflow-hidden shadow-lg">
+          <div className="md:w-3/3 mx-auto h-[450px] border rounded-lg overflow-hidden shadow-lg">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2382.0449990498078!2d-6.420074422925379!3d53.3424506722882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4867731b8a426801%3A0xc876761f4c896bec!2s1%20Rosse%20Court%20Ave%2C%20Balgaddy%2C%20Lucan%2C%20Co.%20Dublin%2C%20K78%20C638%2C%20Ireland!5e0!3m2!1sen!2sng!4v1731765100055!5m2!1sen!2sng"
               width="100%"
