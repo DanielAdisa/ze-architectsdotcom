@@ -7,6 +7,15 @@ import fourth from "@/public/Assets/1234.png";
 import fifth from "@/public/Assets/cagliari_02_viz.jpg";
 import sixth from "@/public/Assets/hero.avif";
 
+export const PROJECTS = [
+  { id: "1", title: 'Project 1', image: first },
+  { id: "2", title: 'Flower 7', image: second },
+  { id: "3", title: 'Melody', image: third },
+  { id: "4", title: 'Doom', image: fourth },
+  { id: "5", title: 'Oglav', image: fifth },
+];
+
+
 export const projects: Project[] = [
   { 
     id: '1',
