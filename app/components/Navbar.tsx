@@ -1,12 +1,13 @@
-"use client";
+'use client';
 
-import { FaTimes } from "react-icons/fa";
-import { FaBars } from "react-icons/fa6";
-import { useEffect, useState } from "react";
-import Link from "next/link";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation'; // Use `usePathname` for active states in Next.js 13
+import { FaArrowPointer, FaBars, FaMaximize, } from 'react-icons/fa6';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 
 const Navbar = () => {
+    const pathname = usePathname(); // For active state tracking
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [header, setHeader] = useState(false);
 
@@ -21,16 +22,26 @@ const Navbar = () => {
     };
 
     useEffect(() => {
-        window.addEventListener("scroll", scrollHeader);
+        window.addEventListener('scroll', scrollHeader);
         return () => {
-            window.removeEventListener("scroll", scrollHeader);
+            window.removeEventListener('scroll', scrollHeader);
         };
     }, [isMobileMenuOpen]);
+
+    const routes = [
+        { path: '/', label: 'Home' },
+        { path: '/about', label: 'About' },
+        { path: '/projects', label: 'Projects' },
+        { path: '/archviz', label: 'ArchViz' },
+        { path: '/contact', label: 'Contact' },
+    ];
+
+    const isActive = (path: string): boolean => pathname === path;
 
     return (
         <header
             className={`${
-                header ? "bg-white shadow-xl text-black" : "backdrop-blur-md text-white"
+                header ? 'bg-white shadow-xl text-black' : 'backdrop-blur-xl text-white'
             } fixed top-0 w-full z-50 transition-all duration-300`}
         >
             <nav className="max-w-[95%] mx-auto flex items-center justify-between h-16 px-4 lg:px-0">
@@ -39,7 +50,7 @@ const Navbar = () => {
                     <Avatar>
                         <AvatarFallback
                             className={`${
-                                header ? "text-black bg-gray-200" : "text-white bg-black"
+                                header ? 'text-black bg-gray-200' : 'text-white bg-black'
                             } transition duration-300`}
                         >
                             ZE
@@ -53,20 +64,24 @@ const Navbar = () => {
                     className="lg:hidden p-2 text-2xl text-inherit transition-all ease-in-out"
                     aria-label="Toggle menu"
                 >
-                    {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+                    {isMobileMenuOpen ? <FaMaximize /> : <FaBars />}
                 </button>
 
                 {/* Desktop Menu */}
                 <div className="hidden lg:flex space-x-10 text-lg font-medium">
-                    {["About", "Team", "Projects","ArchViz", "Insights", "Contact"].map((item) => (
+                    {routes.map(({ path, label }) => (
                         <Link
-                            key={item}
-                            href={`/${item.toLowerCase()}`}
+                            key={path}
+                            href={path}
                             className={`${
-                                header ? "hover:text-gray-700 bg-stone-500/60 p-2 pl-4 pr-4 rounded-full hover:bg-stone-500/50" : "hover:text-gray-300 p-2 pl-4 pr-4 hover:bg-black/10 bg-black/15 rounded-full"
+                                isActive(path)
+                                    ? 'text-stone-50 font-semibold bg-blue-500/70 p-2 pl-4 pr-4 rounded-full hover:bg-stone-500/50'
+                                    : header
+                                    ? 'hover:text-gray-700 text-stone-50 bg-black/70   p-2 pl-4 pr-4 rounded-full hover:bg-stone-500/50'
+                                    : 'hover:text-gray-300  bg-white/10  p-2 pl-4 pr-4 rounded-full hover:bg-stone-500/50'
                             } transition duration-300`}
                         >
-                            {item}
+                            {label}
                         </Link>
                     ))}
                 </div>
@@ -80,16 +95,18 @@ const Navbar = () => {
                         className="absolute top-6 right-6 text-3xl"
                         aria-label="Close menu"
                     >
-                        <FaTimes />
+                        <FaMaximize  />
                     </button>
-                    {["/","About", "Team", "Projects","ArchViz", "Insights", "Contact"].map((item) => (
+                    {routes.map(({ path, label }) => (
                         <Link
-                            key={item}
-                            href={`/${item.toLowerCase()}`}
-                            className="hover:text-gray-200"
+                            key={path}
+                            href={path}
+                            className={`${
+                                isActive(path) ? 'text-blue-400' : 'hover:text-gray-200'
+                            } transition duration-300`}
                             onClick={toggleMobileMenu}
                         >
-                            {item}
+                            {label}
                         </Link>
                     ))}
                 </div>

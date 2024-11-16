@@ -5,25 +5,28 @@ import { FC } from 'react';
 import { projects } from '@/data/data';
 import { Project } from '@/types/types';
 import Image from 'next/image';
-import zubi from '@/public/Assets/zubi.jpg'
+import zubi from '@/public/Assets/hero1.jpeg'
 import { Button } from '@/components/ui/button';
 
 const Home: FC = () => {
   return (
     <div className="relative">
       {/* Hero Section */}
-      <div className="relative w-full h-[400px]">
+      <div className="relative w-full h-[40em]">
         <Image
-          src={zubi} // Replace with your hero image path
+          src={zubi} // Hero image path
           alt="Hero Image"
           layout="fill"
           className="object-cover absolute inset-0"
         />
-        <div className="absolute inset-0 bg-black opacity-40"></div> {/* Optional overlay */}
-        {/* Optional Hero Text */}
-        <div className="relative flex flex-col w-full h-full items-center justify-center z-10 text-center text-white p-24 md:p-3">
-          <h1 className="text-4xl font-bold mb-4">Welcome to Our Projects</h1>
-          <p className="text-xl">Explore our innovative and creative projects</p>
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="relative flex flex-col w-full h-full items-center justify-center z-10 text-center text-white p-4 md:p-6">
+          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+            About ZE-Architects
+          </h1>
+          <p className="text-lg md:text-2xl font-serif max-w-3xl mx-auto opacity-90">
+            Explore our innovative and creative approach to architectural visualization.
+          </p>
         </div>
       </div>
 
