@@ -34,7 +34,8 @@ const Footer = () => {
       </div>
 
       <div className="border-t border-blue-800 mt-8 pt-4 text-center text-sm text-blue-200">
-        &copy; {new Date().getFullYear()} ZE Architects. All rights reserved.
+        &copy; {new Date().getFullYear()} ZE Architects. All rights reserved.<br/>
+         <Link href={"https://daniel-port-sept.vercel.app/"}>Built by Adisa Made It</Link>
       </div>
     </footer>
   );

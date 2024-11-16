@@ -61,7 +61,7 @@ const Home: FC = () => {
                   <p className="text-lg text-gray-700 leading-relaxed tracking-wide">
                     {project.description}
                   </p>
-                  <Button className="mt-4  bg-primary w-full text-white rounded-md hover:bg-primary-dark transition">
+                  <Button className="mt-4   hover:bg-stone-500/40 w-full bg-stone-500/60 text-white rounded-md  transition">
                     Learn More
                   </Button>
                 </div>

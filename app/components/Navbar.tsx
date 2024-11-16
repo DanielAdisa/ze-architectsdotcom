@@ -77,7 +77,7 @@ const Navbar = () => {
                                 isActive(path)
                                     ? 'text-stone-50 font-semibold bg-blue-500/70 p-2 pl-4 pr-4 rounded-full hover:bg-stone-500/50'
                                     : header
-                                    ? 'hover:text-gray-700 text-stone-50 bg-black/70   p-2 pl-4 pr-4 rounded-full hover:bg-stone-500/50'
+                                    ? 'hover:text-gray-700 text-stone-50 bg-stone-500/60   p-2 pl-4 pr-4 rounded-full hover:bg-stone-500/50'
                                     : 'hover:text-gray-300  bg-white/10  p-2 pl-4 pr-4 rounded-full hover:bg-stone-500/50'
                             } transition duration-300`}
                         >
