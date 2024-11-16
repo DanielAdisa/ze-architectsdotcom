@@ -36,11 +36,11 @@ const Page = () => {
       </div>
 
       {/* Content Section */}
-      <div className="h-fit w-5/6 mx-auto flex flex-col md:flex-row md:space-x-10 p-5">
+      <div className="h-fit md:w-5/6 w-full mx-auto flex flex-col md:flex-row md:space-x-10 p-4">
         {/* Contact Form */}
         <div className="flex-1">
           <form
-            className="flex flex-col space-y-4 w-11/12 max-w-xl mx-auto"
+            className="flex flex-col space-y-4 md:w-11/12 max-w-xl mx-auto"
             onSubmit={handleSubmit(onSubmit)}
           >
             <div className="flex flex-col md:flex-row md:space-x-4 space-y-2 md:space-y-0">
