@@ -30,7 +30,7 @@ const Page = () => {
 
       {/* About Section */}
       <div className="w-full bg-gray-100 py-16 md:py-24">
-      <h2 className="text-4xl font-semibold text-center bg-stone-400 rounded-md  p-4 max-w-7xl mx-auto text-stone-50 mb-6">My Practice</h2>
+      <h2 className="text-4xl font-semibold text-center bg-stone-500/60 rounded-md  p-4 max-w-7xl mx-auto text-stone-50 mb-6">My Practice</h2>
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-12">
           {/* Founder Image Section */}
           <div className="w-full md:w-1/2 relative">
@@ -60,7 +60,7 @@ const Page = () => {
             </p>
 
             {/* Optional Call-to-Action Button */}
-            <Button className="bg-primary text-white rounded-md w-full py-6 px-6  hover:bg-primary-dark transition duration-300">
+            <Button className="bg-stone-500/60 text-white rounded-md w-full py-6 px-6  hover:bg-stone-500/40 transition duration-300">
             <Link href={'mailto:zubi@ze-architects.com'}>
                 Get in Touch
             </Link>
