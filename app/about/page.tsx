@@ -4,6 +4,7 @@ import Image from 'next/image';
 import zubi from '@/public/Assets/hero1.jpeg'; // Hero Image
 import founderImage from '@/public/Assets/zubi.jpg'; // Founder Image
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 const Page = () => {
   return (
@@ -29,6 +30,7 @@ const Page = () => {
 
       {/* About Section */}
       <div className="w-full bg-gray-100 py-16 md:py-24">
+      <h2 className="text-4xl font-semibold text-center bg-stone-400 rounded-md  p-4 max-w-7xl mx-auto text-stone-50 mb-6">My Practice</h2>
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-12">
           {/* Founder Image Section */}
           <div className="w-full md:w-1/2 relative">
@@ -43,7 +45,7 @@ const Page = () => {
 
           {/* Founder Text Section */}
           <div className="w-full md:w-1/2 text-center md:text-left">
-            <h2 className="text-4xl font-semibold text-gray-800 mb-6">Our Practice</h2>
+            
             <p className="text-lg text-gray-700 mb-4 leading-relaxed">
               ZE Architects is a practice based in Dublin, Ireland, with vast experience in architecture. We specialize in various architectural projects, ranging from leisure, master-planning, health, residential, commercial, sports/arena, education, and interior design. Our expertise includes visualizations for planning purposes, site/environmental studies, and promotional/marketing purposes.
             </p>
@@ -58,8 +60,10 @@ const Page = () => {
             </p>
 
             {/* Optional Call-to-Action Button */}
-            <Button className="bg-primary text-white rounded-md w-full py-3 px-6 hover:bg-primary-dark transition duration-300">
-              Get in Touch
+            <Button className="bg-primary text-white rounded-md w-full py-6 px-6  hover:bg-primary-dark transition duration-300">
+            <Link href={'mailto:zubi@ze-architects.com'}>
+                Get in Touch
+            </Link>
             </Button>
           </div>
         </div>
