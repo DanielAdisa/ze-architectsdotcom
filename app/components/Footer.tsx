@@ -1,7 +1,7 @@
 // Footer.tsx
 
 import Link from "next/link";
-import { FaLinkedinIn, FaSquareInstagram, FaTwitter } from "react-icons/fa6";
+import { FaInstagram, FaLinkedinIn, FaSquareInstagram, FaTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -21,7 +21,7 @@ const Footer = () => {
           <ul className="flex h-fit w-full items-center justify-center gap-5 mt-10">
             <li><Link href="#" className="hover:text-blue-300 hover:bg-white/10"><FaLinkedinIn className=" md:text-3xl text-xl"/></Link></li>
             <li><Link href="#" className="hover:text-blue-300 hover:bg-white/10"><FaTwitter className=" md:text-3xl text-xl"/></Link></li>
-            <li><Link href="#" className="hover:text-blue-300 hover:bg-white/10"><FaSquareInstagram className=" md:text-3xl text-xl"/></Link></li>
+            <li><Link href="#" className="hover:text-blue-300 hover:bg-white/10"><FaInstagram className=" md:text-3xl text-xl"/></Link></li>
           </ul>
         </div>
 
