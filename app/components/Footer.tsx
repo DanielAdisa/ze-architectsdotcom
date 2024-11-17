@@ -5,7 +5,7 @@ import { FaInstagram, FaLinkedinIn, FaSquareInstagram, FaTwitter } from "react-i
 
 const Footer = () => {
   return (
-    <footer className="text-stone-50 w-full p-8 md:p-8 backdrop-blur-2xl bg-stone-500 rounded-t-x">
+    <footer className="text-stone-50 w-full p-8 md:p-8 backdrop-blur-2xl bg-blue-700 rounded-t-x">
       <div className="md:flex w-full items-center justify-between">
         
         {/* Address Section */}
@@ -33,7 +33,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="border-t bg-stone-500 mt-8 pt-4 text-center text-sm text-stone-50">
+      <div className="border-t bg-blue-700 mt-8 pt-4 text-center text-sm text-stone-50">
         &copy; {new Date().getFullYear()} ZE Architects. All rights reserved.<br/>
          <Link href={"https://daniel-port-sept.vercel.app/"}>Built by Adisa Made It</Link>
       </div>
