@@ -1,15 +1,14 @@
-// app/layout.tsx
-
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "ZE-Architects",
-  description: "Website for ZE Architects a architectural firm located in Dublin",
+  description: "Website for ZE Architects, an architectural firm located in Dublin",
+  icons: {
+    icon: "/zealogo.svg", // Path to your favicon
+  },
 };
 
 export default function RootLayout({
@@ -19,17 +18,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <link href="/zealogo.png" type="image" />
-      </Head>
       <body className="flex flex-col min-h-screen">
         {/* Navbar at the top */}
         <Navbar />
 
         {/* Main content area, takes up remaining space */}
-        <main className="flex-grow">
-          {children}
-        </main>
+        <main className="flex-grow">{children}</main>
 
         {/* Footer stays at the bottom */}
         <Footer />
