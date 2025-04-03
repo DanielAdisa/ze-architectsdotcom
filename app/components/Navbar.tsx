@@ -2,14 +2,25 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation'; // Use `usePathname` for active states in Next.js 13
-import { FaArrowPointer, FaBars, FaMaximize, } from 'react-icons/fa6';
+import { usePathname } from 'next/navigation'; 
+import { 
+  FiMenu, 
+  FiX, 
+  FiHome, 
+  FiInfo, 
+  FiBriefcase, 
+  FiImage, 
+  FiMail,
+  FiChevronRight
+} from 'react-icons/fi';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
-    const pathname = usePathname(); // For active state tracking
+    const pathname = usePathname();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [header, setHeader] = useState(false);
+    const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -17,7 +28,7 @@ const Navbar = () => {
 
     const scrollHeader = () => {
         if (!isMobileMenuOpen) {
-            setHeader(window.scrollY >= window.innerHeight * 0.1);
+            setHeader(window.scrollY >= window.innerHeight * 0.05);
         }
     };
 
@@ -29,88 +40,140 @@ const Navbar = () => {
     }, [isMobileMenuOpen]);
 
     const routes = [
-        { path: '/', label: 'Home' },
-        { path: '/about', label: 'About' },
-        { path: '/projects', label: 'Projects' },
-        { path: '/archviz', label: 'ArchViz' },
-        { path: '/contact', label: 'Contact' },
+        { path: '/', label: 'Home', icon: <FiHome className="inline-block mr-2" /> },
+        { path: '/about', label: 'About', icon: <FiInfo className="inline-block mr-2" /> },
+        { path: '/projects', label: 'Projects', icon: <FiBriefcase className="inline-block mr-2" /> },
+        { path: '/archviz', label: 'ArchViz', icon: <FiImage className="inline-block mr-2" /> },
+        { path: '/contact', label: 'Contact', icon: <FiMail className="inline-block mr-2" /> },
     ];
 
-    const isActive = (path: string): boolean => pathname === path;
+    const isActive = (path: string): boolean => {
+        if (path === '/') {
+            return pathname === path;
+        }
+        return pathname.startsWith(path);
+    };
 
     return (
         <header
             className={`${
-                header ? 'bg-white shadow-xl text-black' : 'backdrop-blur-xl text-white'
-            } fixed top-0 w-full z-50 transition-all duration-300`}
+                header 
+                    ? 'bg-white/90 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(31,38,135,0.1)] text-slate-900' 
+                    : 'bg-black/20 backdrop-blur-xl text-white'
+            } fixed top-0 w-full z-50 transition-all duration-500`}
         >
-            <nav className="max-w-[95%] mx-auto flex items-center justify-between h-16 px-4 lg:px-0">
-                {/* Logo */}
-                <Link href="/" className="flex items-center">
-                    <Avatar>
-                        <AvatarFallback
-                            className={`${
-                                header ? 'text-black bg-gray-200' : 'text-white bg-black'
-                            } transition duration-300`}
-                        >
-                            ZE
-                        </AvatarFallback>
-                    </Avatar>
-                </Link>
+            <div className="max-w-[95%] mx-auto">
+                <nav className="flex items-center justify-between h-16 px-4 lg:px-6">
+                    {/* Logo */}
+                    <Link href="/" className="flex items-center group">
+                        <div className="relative overflow-hidden rounded-full">
+                            <Avatar className="ring-2 ring-offset-2 ring-offset-transparent transition-all duration-300 ring-white/20 group-hover:ring-white/50">
+                                <AvatarFallback
+                                    className={`${
+                                        header ? 'text-slate-900 bg-gradient-to-br from-gray-100 to-gray-300' : 'text-white bg-gradient-to-br from-slate-800 to-slate-900'
+                                    } transition duration-300`}
+                                >
+                                    ZE
+                                </AvatarFallback>
+                            </Avatar>
+                            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-full"></div>
+                        </div>
+                    </Link>
 
-                {/* Mobile Menu Toggle */}
-                <button
-                    onClick={toggleMobileMenu}
-                    className="lg:hidden p-2 text-2xl text-inherit transition-all ease-in-out"
-                    aria-label="Toggle menu"
-                >
-                    {isMobileMenuOpen ? <FaMaximize /> : <FaBars />}
-                </button>
-
-                {/* Desktop Menu */}
-                <div className="hidden lg:flex space-x-10 text-lg font-medium">
-                    {routes.map(({ path, label }) => (
-                        <Link
-                            key={path}
-                            href={path}
-                            className={`${
-                                isActive(path)
-                                    ? 'text-stone-50 font-semibold bg-blue-500/70 p-2 pl-4 pr-4 rounded-full hover:bg-stone-500/50'
-                                    : header
-                                    ? 'hover:text-gray-700 text-stone-50 bg-stone-500/60   p-2 pl-4 pr-4 rounded-full hover:bg-stone-500/50'
-                                    : 'hover:text-gray-300  bg-white/10  p-2 pl-4 pr-4 rounded-full hover:bg-stone-500/50'
-                            } transition duration-300`}
-                        >
-                            {label}
-                        </Link>
-                    ))}
-                </div>
-            </nav>
-
-            {/* Mobile Fullscreen Menu */}
-            {isMobileMenuOpen && (
-                <div className="fixed inset-0 h-screen bg-black bg-opacity-75 flex flex-col items-center justify-center space-y-8 text-white text-2xl font-semibold z-50">
+                    {/* Mobile Menu Toggle */}
                     <button
                         onClick={toggleMobileMenu}
-                        className="absolute top-6 right-6 text-3xl"
-                        aria-label="Close menu"
+                        className="lg:hidden p-2 rounded-full bg-white/10 hover:bg-white/20 text-xl text-inherit transition-all duration-300 ease-in-out"
+                        aria-label="Toggle menu"
                     >
-                        <FaMaximize  />
+                        {isMobileMenuOpen ? <FiX className="w-5 h-5" /> : <FiMenu className="w-5 h-5" />}
                     </button>
-                    {routes.map(({ path, label }) => (
-                        <Link
-                            key={path}
-                            href={path}
-                            className={`${
-                                isActive(path) ? 'text-blue-400' : 'hover:text-gray-200'
-                            } transition duration-300`}
+
+                    {/* Desktop Menu */}
+                    <div className="hidden lg:flex items-center space-x-1 text-[15px] font-medium">
+                        {routes.map(({ path, label, icon }) => (
+                            <Link
+                                key={path}
+                                href={path}
+                                className="relative px-5 py-2 mx-1"
+                                onMouseEnter={() => setHoveredItem(path)}
+                                onMouseLeave={() => setHoveredItem(null)}
+                            >
+                                <span className="relative z-10 flex items-center">
+                                    {isActive(path) && icon}
+                                    {label}
+                                    {isActive(path) && (
+                                        <FiChevronRight className="ml-1 w-3 h-3 animate-pulse" />
+                                    )}
+                                </span>
+                                
+                                {/* Background effect */}
+                                {isActive(path) ? (
+                                    <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full -z-0"></span>
+                                ) : (
+                                    hoveredItem === path && (
+                                        <span className="absolute inset-0 bg-white/10 rounded-full -z-0 backdrop-blur-sm"></span>
+                                    )
+                                )}
+                            </Link>
+                        ))}
+                    </div>
+                </nav>
+            </div>
+
+            {/* Mobile Fullscreen Menu - with AnimatePresence for smooth transitions */}
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <motion.div 
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.3 }}
+                        className="fixed inset-0 h-screen bg-gradient-to-br from-slate-900/95 to-black/95 backdrop-blur-md flex flex-col items-center justify-center z-50"
+                    >
+                        <motion.button
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.8 }}
                             onClick={toggleMobileMenu}
+                            className="absolute top-6 right-6 text-2xl p-2 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300"
+                            aria-label="Close menu"
                         >
-                            {label}
-                        </Link>
-                    ))}
-                </div>
-            )}
+                            <FiX />
+                        </motion.button>
+                        
+                        <div className="flex flex-col space-y-6 w-full max-w-md px-8">
+                            {routes.map(({ path, label, icon }) => (
+                                <motion.div
+                                    key={path}
+                                    initial={{ opacity: 0, x: -30 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    exit={{ opacity: 0, x: 30 }}
+                                    transition={{ duration: 0.3, delay: routes.findIndex(route => route.path === path) * 0.1 }}
+                                >
+                                    <Link
+                                        href={path}
+                                        className={`group flex items-center justify-between p-4 ${
+                                            isActive(path) 
+                                                ? 'bg-gradient-to-r from-blue-600/80 to-indigo-600/80 text-white rounded-xl' 
+                                                : 'hover:bg-white/5 text-gray-200 hover:text-white rounded-xl transition-all duration-300'
+                                        }`}
+                                        onClick={toggleMobileMenu}
+                                    >
+                                        <div className="flex items-center">
+                                            <div className={`mr-4 ${isActive(path) ? 'text-white' : 'text-gray-400'}`}>
+                                                {icon}
+                                            </div>
+                                            <span className="text-lg font-medium">{label}</span>
+                                        </div>
+                                        <FiChevronRight className={`transform transition-transform duration-300 ${isActive(path) ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`} />
+                                    </Link>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </header>
     );
 };
